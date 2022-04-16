@@ -4,5 +4,6 @@ public class GitTest {
         System.out.println("Go to nwpu follow panwei");
         System.out.println("Hello Git2!");
         System.out.println("Hello Git3!");
+        System.out.println("This body is on the hot-fix");
     }
 }
