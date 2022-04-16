@@ -7,5 +7,7 @@ public class GitTest {
         System.out.println("This body is on the hot-fix");
         System.out.println("This is a test on the master");
         System.out.println("This is a test about hot-fix ");
+        System.out.println("Push again with test");
+
     }
 }
