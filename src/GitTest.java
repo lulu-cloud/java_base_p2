@@ -8,6 +8,7 @@ public class GitTest {
         System.out.println("This is a test on the master");
         System.out.println("This is a test about hot-fix ");
         System.out.println("Push again with test");
+        System.out.println("I will pull this code into my private computer");
 
     }
 }
