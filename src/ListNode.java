@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class ListNode {
@@ -7,19 +8,48 @@ public class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
+    public ListNode deleteDuplication(ListNode pHead) {
+        /*2022-05-21 23:02*/
+        ListNode p=pHead;
+        ListNode pre=null;
+        while(p!=null){
+            //出现重复，删除当前结点
+            if(pre!=null&&p.val==pre.val){
+                //当前为最后一个结点，将pre.next置null,p=null以便结束循环
+                if(p.next==null){
+                    pre.next=null;
+                    p=null;
+                }
+                //否则，正常删除该结点
+                else {
+                    pre.next=p.next;
+                    p=p.next;
+//                    p.val = p.next.val;
+//                    p.next = p.next.next;
+                }
+            }
+            else{
+                //temp更新为当前结点的值
+                pre=p;
+                p=p.next;
+            }
+        }
+        return pHead;
+    }
     public static void main(String[] args) {
-        ListNode head=new ListNode(4);
+        ListNode head=new ListNode(1);
         head.next=new ListNode(2);
-        head.next.next=new ListNode(1);
+        head.next.next=new ListNode(2);
         head.next.next.next=new ListNode(3);
-        head=new Solution().sortList(head);
+        head.next.next.next.next=new ListNode(3);
+        head=new ListNode().deleteDuplication(head);
         for(ListNode p=head;p!=null;p=p.next){
             System.out.println(p.val);
         }
     }
 }
 
-class Solution {
+class Solution_ListNode {
     public ListNode sortList(ListNode head) {
 /*        //排序链表
         2022-3-21 21:20
