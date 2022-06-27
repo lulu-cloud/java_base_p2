@@ -1,3 +1,3 @@
 # java_base_p2
 
-**run src/com.lili.p2/ui/CustomerView.java**
+**run 尚硅谷src/com.lili.p2/ui/CustomerView.java**
